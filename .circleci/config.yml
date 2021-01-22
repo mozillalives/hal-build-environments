@@ -199,6 +199,11 @@ workflows:
                 path: './node/12.12'
                 tag: 'node12.12-debian10'
                 requires: ['fan_in_4']
+            - build_image:
+                name: 'build_node_1415'
+                path: './node/14.15'
+                tag: 'node14.15-debian10'
+                requires: ['fan_in_4']
 
             - fan_in:
                 name: 'fan_in_5'
@@ -208,6 +213,7 @@ workflows:
                     - build_node_810
                     - build_node_1010
                     - build_node_1212
+                    - build_node_1415
 
             - build_image:
                 name: 'build_php_56'
